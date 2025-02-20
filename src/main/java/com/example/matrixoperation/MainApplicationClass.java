@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MainApplicationClass extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MatrixOperationView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplicationClass.class.getResource("MatrixOperationView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Matrix Operation");
         stage.setScene(scene);
