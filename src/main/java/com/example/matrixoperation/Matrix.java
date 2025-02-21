@@ -97,6 +97,24 @@ public class Matrix {
         }
     }
 
+    public Matrix multiplyMatrices(Matrix m) {
+        if (this.values[0].length == m.values.length) {
+            Matrix temp = new Matrix();
+            temp.values = new int[this.values.length][m.values[0].length];
+            int i, j, k;
+            for (i = 0; i < this.values.length; i++) {
+                for (j = 0; j < m.values[0].length; j++) {
+                    for (k = 0; k < this.values[0].length; k++) {
+                        temp.values[i][j] += this.values[i][k] * m.values[k][j];
+                    }
+                }
+            }
+            return temp;
+        } else {
+            return null;
+        }
+    }
+
     public void transposeMatrix() {
 
     }

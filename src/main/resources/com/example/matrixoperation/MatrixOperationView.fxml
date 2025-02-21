@@ -10,130 +10,112 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane focusTraversable="true" prefHeight="698.0" prefWidth="842.0" style="-fx-background-color: #f2f1f6;"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.matrixoperation.MatrixOperationController">
+<AnchorPane focusTraversable="true" prefHeight="698.0" prefWidth="842.0" style="-fx-background-color: #f2f1f6;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrixoperation.MatrixOperationController">
     <children>
-        <TextField fx:id="onRowOneInput" blendMode="SRC_ATOP" layoutX="49.0" layoutY="68.0" prefHeight="34.0"
-                   prefWidth="191.0"
-                   style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
+        <TextField fx:id="onRowOneInput" blendMode="SRC_ATOP" layoutX="49.0" layoutY="68.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
         <Text layoutX="49.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
             <font>
-                <Font size="10.0"/>
+                <Font size="10.0" />
             </font>
         </Text>
-        <TextField fx:id="onColTwoInput" blendMode="SRC_ATOP" layoutX="267.0" layoutY="138.0" prefHeight="34.0"
-                   prefWidth="191.0"
-                   style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
+        <TextField fx:id="onColTwoInput" blendMode="SRC_ATOP" layoutX="267.0" layoutY="138.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="267.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Number of column ( matrix 1 )">
+        <Text layoutX="267.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
             <font>
-                <Font size="10.0"/>
+                <Font size="10.0" />
             </font>
         </Text>
-        <TextField fx:id="onColOneInput" blendMode="SRC_ATOP" layoutX="49.0" layoutY="138.0" prefHeight="34.0"
-                   prefWidth="191.0"
-                   style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
+        <TextField fx:id="onColOneInput" blendMode="SRC_ATOP" layoutX="49.0" layoutY="138.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="49.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Number of column ( matrix 1 )">
+        <Text layoutX="49.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
             <font>
-                <Font size="10.0"/>
+                <Font size="10.0" />
             </font>
         </Text>
-        <TextField fx:id="onRowTwoInput" blendMode="SRC_ATOP" layoutX="267.0" layoutY="68.0" prefHeight="34.0"
-                   prefWidth="191.0"
-                   style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
+        <TextField fx:id="onRowTwoInput" blendMode="SRC_ATOP" layoutX="267.0" layoutY="68.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="267.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Number of column ( matrix 1 )">
+        <Text layoutX="267.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
             <font>
-                <Font size="10.0"/>
+                <Font size="10.0" />
             </font>
         </Text>
-        <CheckBox fx:id="inputChoiceCheckbox" cache="true" layoutX="49.0" layoutY="189.0" mnemonicParsing="false"
-                  onAction="#inputChoiceCheckboxOnAction" text="Want to give input for matrix element"/>
-        <Button fx:id="generateRandomValueButton" layoutX="505.0" layoutY="68.0" mnemonicParsing="false"
-                onAction="#generateMatricesWithRandomValueOnAction" prefHeight="34.0" prefWidth="293.0"
-                style="-fx-background-color: #f55951;" text="Generate Random" textFill="WHITE">
+        <CheckBox fx:id="inputChoiceCheckbox" cache="true" layoutX="49.0" layoutY="189.0" mnemonicParsing="false" onAction="#inputChoiceCheckboxOnAction" text="Want to give input for matrix element" />
+        <Button fx:id="generateRandomValueButton" layoutX="505.0" layoutY="68.0" mnemonicParsing="false" onAction="#generateMatricesWithRandomValueOnAction" prefHeight="34.0" prefWidth="293.0" style="-fx-background-color: #3eb750;" text="Generate Random" textFill="WHITE">
             <font>
-                <Font name="Arial" size="12.0"/>
+                <Font name="Arial" size="12.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField fx:id="matrixElementInput" blendMode="SRC_ATOP" layoutX="505.0" layoutY="138.0" prefHeight="34.0"
-                   prefWidth="191.0"
-                   style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
+        <TextField fx:id="matrixElementInput" blendMode="SRC_ATOP" layoutX="505.0" layoutY="138.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 0.5;">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text fx:id="enterElementText" layoutX="505.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Enter Matrix Elements">
+        <Text fx:id="enterElementText" layoutX="505.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Matrix Elements">
             <font>
-                <Font size="10.0"/>
+                <Font size="10.0" />
             </font>
         </Text>
-        <Button fx:id="addElementToMatrixButton" layoutX="711.0" layoutY="138.0" mnemonicParsing="false"
-                onAction="#addMatrixElementOnButton" prefHeight="34.0" prefWidth="88.0"
-                style="-fx-background-color: #f55951;" text="ADD" textFill="WHITE">
+        <Button fx:id="addElementToMatrixButton" layoutX="711.0" layoutY="138.0" mnemonicParsing="false" onAction="#addMatrixElementOnButton" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #3eb750;" text="ADD" textFill="WHITE">
             <font>
-                <Font name="Arial" size="12.0"/>
+                <Font name="Arial" size="12.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <ComboBox fx:id="selectOperationComboBox" layoutX="49.0" layoutY="230.0" prefHeight="34.0" prefWidth="408.0"
-                  promptText="Operation" style="-fx-background-color: white;"/>
-        <Button layoutX="505.0" layoutY="230.0" mnemonicParsing="false" onAction="#ExecuteOperationOnAction"
-                prefHeight="34.0" prefWidth="293.0" style="-fx-background-color: #f55951;" text="Execute"
-                textFill="WHITE">
+        <ComboBox fx:id="selectOperationComboBox" layoutX="49.0" layoutY="230.0" prefHeight="34.0" prefWidth="408.0" promptText="Operation" style="-fx-background-color: white;" />
+        <Button layoutX="505.0" layoutY="230.0" mnemonicParsing="false" onAction="#ExecuteOperationOnAction" prefHeight="34.0" prefWidth="293.0" style="-fx-background-color: #3eb750;" text="Execute" textFill="WHITE">
             <font>
-                <Font name="Arial Bold" size="12.0"/>
+                <Font name="Arial Bold" size="12.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="353.0" layoutX="49.0" layoutY="312.0"
-                   stroke="#0000008b" strokeType="INSIDE" width="750.0"/>
-        <Text fx:id="showMatrixText" layoutX="58.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              wrappingWidth="726.7999267578125">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="331.0" layoutX="49.0" layoutY="334.0" stroke="#0000008b" strokeType="INSIDE" width="750.0" />
+        <Text fx:id="showMatrixText" layoutX="58.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="726.7999267578125">
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
         </Text>
+      <Button layoutX="49.0" layoutY="282.0" mnemonicParsing="false" onAction="#resetOnClick" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #f55951;" text="reset" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
     </children>
 </AnchorPane>

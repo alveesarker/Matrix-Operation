@@ -45,7 +45,7 @@ public class MatrixOperationController {
         generateRandomValueButton.setDisable(false);
         addElementToMatrixButton.setDisable(true);
         matrixElementInput.setDisable(true);
-        selectOperationComboBox.getItems().addAll("Show Matrix", "Transpose Matrix", "Add Matrix");
+        selectOperationComboBox.getItems().addAll("Show Matrix", "Transpose Matrix", "Add Matrix", "Multiplication");
         enterElementText.setText("Enter Matrix Elements M1(" + rowOne + "X" + colOne + ")");
     }
 
@@ -96,6 +96,13 @@ public class MatrixOperationController {
                 showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nSum of Matrix: \n" + resultMatrix.toString());
             } else {
                 showMatrixText.setText("Both matrices must have the same number of rows and columns.");
+            }
+        } else if (selectOperationComboBox.getValue().equals("Multiplication")) {
+            Matrix resultMatrix = m1.multiplyMatrices(m2);
+            if (resultMatrix == null) {
+                showMatrixText.setText("Dimension mismatch.");
+            } else {
+                showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nSum of Matrix: \n" + resultMatrix.toString());
             }
         }
     }
@@ -154,11 +161,22 @@ public class MatrixOperationController {
                 enterElementText.setText("Enter Matrix Elements M2(" + rowTwo + "X" + colTwo + ")");
             }
         }
+        matrixElementInput.setText("");
         System.out.println(rowOne);
         System.out.println(colOne);
         System.out.println(rowTwo);
         System.out.println(colTwo);
         System.out.println("\n\n");
 
+    }
+
+    @javafx.fxml.FXML
+    public void resetOnClick(ActionEvent actionEvent) {
+        onRowTwoInput.setText("");
+        onRowOneInput.setText("");
+        onColTwoInput.setText("");
+        onColOneInput.setText("");
+        m1 = null;
+        m2 = null;
     }
 }
