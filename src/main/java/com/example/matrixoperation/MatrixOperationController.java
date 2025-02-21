@@ -176,6 +176,8 @@ public class MatrixOperationController {
         onRowOneInput.setText("");
         onColTwoInput.setText("");
         onColOneInput.setText("");
+        matrixElementInput.setText("");
+        showMatrixText.setText("");
         m1 = null;
         m2 = null;
     }
