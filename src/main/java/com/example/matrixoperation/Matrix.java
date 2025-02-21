@@ -6,18 +6,18 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Matrix {
-//    int noOfRows, noOfCols;
+    //    int noOfRows, noOfCols;
     int[][] values;
 
-    public Matrix(){
+    public Matrix() {
         values = null;
     }
 
-    public Matrix(int row, int col){
+    public Matrix(int row, int col) {
         values = new int[row][col];
-        int i,j;
-        for(i=0; i<values.length;i++){
-            for(j=0;j<values[i].length;j++){
+        int i, j;
+        for (i = 0; i < values.length; i++) {
+            for (j = 0; j < values[i].length; j++) {
                 values[i][j] = 0;
             }
         }
@@ -37,12 +37,12 @@ public class Matrix {
         return (str.toString());
     }
 
-    public void setMatrix(int rows, int cols){
+    public void setMatrix(int rows, int cols) {
         values = new int[rows][cols];
         Random r = new Random();
-        int i,j;
-        for(i=0; i<rows;i++){
-            for(j=0;j<cols;j++){
+        int i, j;
+        for (i = 0; i < rows; i++) {
+            for (j = 0; j < cols; j++) {
                 values[i][j] = r.nextInt(100);
             }
         }
@@ -62,19 +62,19 @@ public class Matrix {
     public Matrix(int rows, int cols, int upperBound) {
         values = new int[rows][cols];
         Random r = new Random();
-        int i,j;
-        for(i=0; i<rows;i++){
-            for(j=0;j<cols;j++){
+        int i, j;
+        for (i = 0; i < rows; i++) {
+            for (j = 0; j < cols; j++) {
                 values[i][j] = r.nextInt(upperBound);
             }
         }
     }
 
-    public void showMatrix(){
+    public void showMatrix() {
         Random r = new Random();
-        int i,j;
-        for(i=0; i<values.length;i++){
-            for(j=0;j<values[i].length;j++){
+        int i, j;
+        for (i = 0; i < values.length; i++) {
+            for (j = 0; j < values[i].length; j++) {
                 System.out.print(this.values[i][j] + " ");
             }
             System.out.println();
@@ -97,7 +97,7 @@ public class Matrix {
         }
     }
 
-    public void transposeMatrix(){
+    public void transposeMatrix() {
 
     }
 }

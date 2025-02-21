@@ -8,7 +8,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.util.Arrays;
 
 public class MatrixOperationController {
     @javafx.fxml.FXML
@@ -47,7 +46,7 @@ public class MatrixOperationController {
         addElementToMatrixButton.setDisable(true);
         matrixElementInput.setDisable(true);
         selectOperationComboBox.getItems().addAll("Show Matrix", "Transpose Matrix", "Add Matrix");
-        enterElementText.setText("Enter Matrix Elements M1("+ rowOne +"X" + colOne+")");
+        enterElementText.setText("Enter Matrix Elements M1(" + rowOne + "X" + colOne + ")");
     }
 
     @javafx.fxml.FXML
@@ -66,14 +65,14 @@ public class MatrixOperationController {
 
     @javafx.fxml.FXML
     public void inputChoiceCheckboxOnAction(ActionEvent actionEvent) {
-        if(inputChoiceCheckbox.isSelected()) {
+        if (inputChoiceCheckbox.isSelected()) {
             generateRandomValueButton.setDisable(true);
             addElementToMatrixButton.setDisable(false);
             matrixElementInput.setDisable(false);
             m1 = new Matrix();
             m2 = new Matrix();
 
-        }else {
+        } else {
             generateRandomValueButton.setDisable(false);
             addElementToMatrixButton.setDisable(true);
             matrixElementInput.setDisable(true);
@@ -86,15 +85,16 @@ public class MatrixOperationController {
     public void ExecuteOperationOnAction(ActionEvent actionEvent) {
         if (m1 == null || m2 == null) {
             showMatrixText.setText("Click the button \"Generate Random\" first.");
+            return;
         }
-        if (selectOperationComboBox.getValue().equals("Show Matrix")){
+        if (selectOperationComboBox.getValue().equals("Show Matrix")) {
             showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString());
 //            System.out.println(("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString()));
-        } else if(selectOperationComboBox.getValue().equals("Add Matrix")) {
+        } else if (selectOperationComboBox.getValue().equals("Add Matrix")) {
             Matrix resultMatrix = m1.addMatrices(m2);
-            if (resultMatrix != null){
+            if (resultMatrix != null) {
                 showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nSum of Matrix: \n" + resultMatrix.toString());
-        } else {
+            } else {
                 showMatrixText.setText("Both matrices must have the same number of rows and columns.");
             }
         }
@@ -102,46 +102,63 @@ public class MatrixOperationController {
 
     @javafx.fxml.FXML
     public void addMatrixElementOnButton(ActionEvent actionEvent) {
+        int intOnRowOneInput = Integer.parseInt(onRowOneInput.getText());
+        int intOnRowTwoInput = Integer.parseInt(onRowTwoInput.getText());
+        int intOnColOneInput = Integer.parseInt(onColOneInput.getText());
+        int intOnColTwoInput = Integer.parseInt(onColTwoInput.getText());
         int value = Integer.parseInt(matrixElementInput.getText());
-        if (m1.values == null){
-            m1.values = new int[Integer.parseInt(onRowOneInput.getText())][Integer.parseInt(onColOneInput.getText())];
-            m2.values = new int[Integer.parseInt(onRowTwoInput.getText())][Integer.parseInt(onColTwoInput.getText())];
+
+
+        if (m1.values == null) {
+            m1.values = new int[intOnRowOneInput][intOnColOneInput];
+            m2.values = new int[intOnRowTwoInput][intOnColTwoInput];
             m1.values[rowOne - 1][colOne - 1] = value;
             colOne += 1;
         } else {
-            if (rowOne <= Integer.parseInt(onRowOneInput.getText())) {
+            if (rowOne <= intOnRowOneInput) {
 
-                if (colOne <= Integer.parseInt(onColOneInput.getText())) {
-                    m1.values[rowOne- 1][colOne-1] = value;
+                if (colOne < intOnColOneInput) {
+                    m1.values[rowOne - 1][colOne - 1] = value;
                     colOne += 1;
-                    if (rowOne == Integer.parseInt(onRowOneInput.getText())){
-                        rowOne += 1;
-                    }
-                }else {
+                } else if (colOne == intOnColOneInput) {
+                    m1.values[rowOne - 1][colOne - 1] = value;
                     rowOne += 1;
                     colOne = 1;
-                    m1.values[rowOne- 1][colOne-1] = value;
-                    colOne += 1;
                 }
             } else {
-                if (colTwo <= Integer.parseInt(onColTwoInput.getText())) {
-                    m2.values[rowTwo- 1][colTwo-1] = value;
+                if (colTwo < intOnColTwoInput) {
+                    m2.values[rowTwo - 1][colTwo - 1] = value;
                     colTwo += 1;
-                    if (rowTwo == Integer.parseInt(onRowTwoInput.getText())){
+                } else if (colTwo == intOnColTwoInput) {
+                    m2.values[rowTwo - 1][colTwo - 1] = value;
+                    if (rowTwo != intOnRowTwoInput) {
                         rowTwo += 1;
+                        colTwo = 1;
+                    } else {
+                        enterElementText.setText("Finished!");
+                        return;
                     }
-                }else {
-                    rowTwo += 1;
-                    colTwo = 1;
-                    m2.values[rowTwo- 1][colTwo-1] = value;
-                    colTwo += 1;
                 }
             }
         }
-        if (rowOne <= Integer.parseInt(onRowOneInput.getText())) {
-            enterElementText.setText("Enter Matrix Elements M1("+ rowOne +"X" + colOne+")");
+        if (rowOne <= intOnRowOneInput) {
+            if (colOne > intOnColOneInput) {
+                enterElementText.setText("Enter Matrix Elements M1(" + (rowOne + 1) + "X" + 1 + ")");
+            } else {
+                enterElementText.setText("Enter Matrix Elements M1(" + rowOne + "X" + colOne + ")");
+            }
         } else {
-            enterElementText.setText("Enter Matrix Elements M2("+ rowTwo +"X" + colTwo+")");
+            if (colTwo > intOnColTwoInput) {
+                enterElementText.setText("Enter Matrix Elements M2(" + (rowTwo + 1) + "X" + 1 + ")");
+            } else {
+                enterElementText.setText("Enter Matrix Elements M2(" + rowTwo + "X" + colTwo + ")");
+            }
         }
+        System.out.println(rowOne);
+        System.out.println(colOne);
+        System.out.println(rowTwo);
+        System.out.println(colTwo);
+        System.out.println("\n\n");
+
     }
 }
