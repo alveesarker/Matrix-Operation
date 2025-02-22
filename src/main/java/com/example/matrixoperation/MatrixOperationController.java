@@ -71,6 +71,11 @@ public class MatrixOperationController {
             matrixElementInput.setDisable(false);
             m1 = new Matrix();
             m2 = new Matrix();
+            rowOne = 1;
+            rowTwo = 1;
+            colOne = 1;
+            colTwo = 1;
+            enterElementText.setText("Enter Matrix Elements M1(" + rowOne + "X" + colOne + ")");
 
         } else {
             generateRandomValueButton.setDisable(false);
@@ -100,9 +105,9 @@ public class MatrixOperationController {
         } else if (selectOperationComboBox.getValue().equals("Multiplication")) {
             Matrix resultMatrix = m1.multiplyMatrices(m2);
             if (resultMatrix == null) {
-                showMatrixText.setText("Dimension mismatch.");
+                showMatrixText.setText("Number of columns in the first matrix does not match the number of rows in the second matrix.");
             } else {
-                showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nSum of Matrix: \n" + resultMatrix.toString());
+                showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nMultiplication of Matrices: \n" + resultMatrix.toString());
             }
         }
     }
