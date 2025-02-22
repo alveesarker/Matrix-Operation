@@ -20,7 +20,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="49.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
+        <Text layoutX="49.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of row ( matrix 1 )">
             <font>
                 <Font size="10.0" />
             </font>
@@ -33,7 +33,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="267.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
+        <Text layoutX="267.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 2 )">
             <font>
                 <Font size="10.0" />
             </font>
@@ -59,7 +59,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </TextField>
-        <Text layoutX="267.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of column ( matrix 1 )">
+        <Text layoutX="267.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of row ( matrix 2 )">
             <font>
                 <Font size="10.0" />
             </font>
