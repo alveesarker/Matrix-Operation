@@ -115,7 +115,16 @@ public class Matrix {
         }
     }
 
-    public void transposeMatrix() {
+    public Matrix transposeMatrix() {
+        Matrix temp = new Matrix();
+        temp.values = new int[this.values[0].length][this.values.length];
 
+        for (int i = 0; i < this.values.length; i++) {
+            for (int j = 0; j < this.values[0].length; j++) {
+                temp.values[j][i] = this.values[i][j];
+            }
+        }
+
+        return temp;
     }
 }

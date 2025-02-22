@@ -54,12 +54,12 @@ public class MatrixOperationController {
         m1 = new Matrix(
                 Integer.parseInt(onRowOneInput.getText()),
                 Integer.parseInt(onColOneInput.getText()),
-                100
+                20
         );
         m2 = new Matrix(
                 Integer.parseInt(onRowTwoInput.getText()),
                 Integer.parseInt(onColTwoInput.getText()),
-                100
+                20
         );
     }
 
@@ -109,6 +109,10 @@ public class MatrixOperationController {
             } else {
                 showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nMultiplication of Matrices: \n" + resultMatrix.toString());
             }
+        } else if (selectOperationComboBox.getValue().equals("Transpose Matrix")) {
+            Matrix resultMatrixM1 = m1.transposeMatrix();
+            Matrix resultMatrixM2 = m2.transposeMatrix();
+            showMatrixText.setText("Matrix-1:\n" + m1.toString() + "\nMatrix-2:\n" + m2.toString() + "\nMatrix-1(T):\n" + resultMatrixM1.toString() + "\nMatrix-2(T):\n" + resultMatrixM2.toString());
         }
     }
 
