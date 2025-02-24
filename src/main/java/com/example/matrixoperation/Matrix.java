@@ -1,8 +1,5 @@
 package com.example.matrixoperation;
 
-import javafx.scene.control.Alert;
-
-import java.util.Arrays;
 import java.util.Random;
 
 public class Matrix {
@@ -37,16 +34,16 @@ public class Matrix {
         return (str.toString());
     }
 
-    public void setMatrix(int rows, int cols) {
-        values = new int[rows][cols];
-        Random r = new Random();
-        int i, j;
-        for (i = 0; i < rows; i++) {
-            for (j = 0; j < cols; j++) {
-                values[i][j] = r.nextInt(100);
-            }
-        }
-    }
+//    public void setMatrix(int rows, int cols) {
+//        values = new int[rows][cols];
+//        Random r = new Random();
+//        int i, j;
+//        for (i = 0; i < rows; i++) {
+//            for (j = 0; j < cols; j++) {
+//                values[i][j] = r.nextInt(100);
+//            }
+//        }
+//    }
 
 //    public Matrix(int rows, int cols, int upperBound) {
 //        values = new int[rows][cols];
@@ -70,16 +67,16 @@ public class Matrix {
         }
     }
 
-    public void showMatrix() {
-        Random r = new Random();
-        int i, j;
-        for (i = 0; i < values.length; i++) {
-            for (j = 0; j < values[i].length; j++) {
-                System.out.print(this.values[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    public void showMatrix() {
+//        Random r = new Random();
+//        int i, j;
+//        for (i = 0; i < values.length; i++) {
+//            for (j = 0; j < values[i].length; j++) {
+//                System.out.print(this.values[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
     public Matrix addMatrices(Matrix m) {
         if (this.values.length == m.values.length && this.values[0].length == m.values[0].length) {
