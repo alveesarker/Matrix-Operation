@@ -1,6 +1,5 @@
 package com.example.matrixoperation;
 
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -30,14 +29,15 @@ public class MatrixOperationController {
     private Button generateRandomValueButton;
     @javafx.fxml.FXML
     private Button addElementToMatrixButton;
-
-    Matrix m1, m2;
-    int rowOne = 1;
-    int colOne = 1;
-    int rowTwo = 1;
-    int colTwo = 1;
     @javafx.fxml.FXML
     private Text enterElementText;
+
+    private Matrix m1, m2;
+    private int rowOne = 1;
+    private int colOne = 1;
+    private int rowTwo = 1;
+    private int colTwo = 1;
+
 
 
     @javafx.fxml.FXML
